@@ -1,0 +1,69 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 255, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #00e5ff;
+  text-transform: uppercase;
+  font-family: "Orbitron", sans-serif;
+}
+
+.logo span {
+  color: #ff00ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: linear-gradient(90deg, #00e5ff, #ff00ff);
+  transition: width 0.4s ease;
+}
+
+.nav-links li a:hover {
+  color: #00e5ff;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
