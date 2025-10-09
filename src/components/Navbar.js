@@ -5,7 +5,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="logo">Love<span>QR</span></div>
+      <div className="logo">i Love<span>QR</span></div>
       <ul className="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/qr">QR Code</a></li>
