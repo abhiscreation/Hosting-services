@@ -1,11 +1,11 @@
-// src/components/Navbar.js
+ // src/components/Navbar.js
 import React from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="logo">My<span>Services</span></div>
+      <div className="logo">Love<span>QR</span></div>
       <ul className="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/qr">QR Code</a></li>

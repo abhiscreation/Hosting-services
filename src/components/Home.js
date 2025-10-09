@@ -5,7 +5,8 @@ import { FaQrcode, FaFilePdf } from "react-icons/fa";
 const services = [
   { name: "QR Code Generator", icon: <FaQrcode />, link: "/qr" },
   { name: "Word to PDF", icon: <FaFilePdf />, link: "/pdf" },
-  // Future services can be added here
+  { name: "Image to PDF", icon: <FaFilePdf />, link: "/pdf" },
+  { name: "PDF Tools", icon: <FaFilePdf />, link: "/pdf" },  
 ];
 
 const Home = () => {
@@ -19,9 +20,6 @@ const Home = () => {
             <div className="service-name">{service.name}</div>
           </a>
         ))}
-        {/* Empty placeholders for future services */}
-        <div className="service-card placeholder">Coming Soon</div>
-        <div className="service-card placeholder">Coming Soon</div>
       </div>
     </div>
   );
