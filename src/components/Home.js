@@ -3,9 +3,9 @@ import "./Home.css";
 import { FaQrcode, FaFilePdf } from "react-icons/fa";
 
 const services = [
-  { name: "QR Code Generator", icon: <FaQrcode />, link: "/qr" },
-  { name: "Word to PDF", icon: <FaFilePdf />, link: "/pdf" },
-  // Future services can be added here
+  { name: "QR Code Generator", icon: <FaQrcode />, type: "qr" },
+  { name: "Word to PDF", icon: <FaFilePdf />, type: "wordtopdf" },
+  { name: "PDF Editor", icon: <FaFilePdf />, type: "pdf" }
 ];
 
 const Home = ({ onOpenModal }) => {

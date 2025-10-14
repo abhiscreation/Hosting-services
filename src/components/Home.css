@@ -1,65 +1,76 @@
 body {
-  background: linear-gradient(120deg, #121212 40%, #2a5be2 150%); /* Modern gradient */
+  background: linear-gradient(108deg, #1c1c2b 40%, #2a5be2 130%);
   font-family: 'Inter', 'Roboto', Arial, sans-serif;
 }
 
 .home-container {
-  padding: 2.5rem;
+  padding: 3.1rem 2.2rem;
   color: #fff;
+  min-height: 90vh;
 }
+
 .home-container h2 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 2.5rem;
-  text-shadow: 0 4px 20px #2a5be2;
+  margin-bottom: 3rem;
+  text-shadow: 0 4px 18px #2a5be2aa;
+  background: linear-gradient(87deg,#3affff 20%,#2a5be2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .services-grid {
   display: flex;
   gap: 2.5rem;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .service-card {
   position: relative;
-  padding: 2.5rem 2rem;
-  width: 190px;
-  border-radius: 22px;
-  background: rgba(40, 52, 90, 0.55);
+  padding: 2.6rem 2rem;
+  min-width: 185px;
+  border-radius: 21px;
+  background: rgba(40, 52, 90, 0.56);
   box-shadow: 0 4px 40px rgba(42,91,226,0.40), 0 2px 4px rgba(0,0,0,0.22);
   color: #fff;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border: 2px solid #3affff66;
-  transition: transform 0.22s, box-shadow 0.22s;
+  transition: transform 0.22s, box-shadow 0.22s, border-color .18s;
   cursor: pointer;
-  overflow: hidden;
+  font-size: 17px;
+  width: 170px;
+  margin-bottom: 1.95rem;
 }
 
 .service-card:hover {
-  transform: scale(1.075) translateY(-8px);
-  box-shadow: 0 16px 48px #2a5be2aa, 0 2px 4px #0ff8;
+  transform: scale(1.085) translateY(-9px);
+  box-shadow: 0 12px 32px #2a5be288, 0 2px 4px #3affff;
   border-color: #2a5be2;
+  z-index: 3;
 }
 
 .service-icon {
-  font-size: 52px;
-  margin-bottom: 1.2rem;
+  font-size: 54px;
+  margin-bottom: 1.15rem;
   filter: drop-shadow(0 0 18px #3affff88);
 }
 
 .service-name {
-  font-size: 1.18rem;
+  font-size: 1.14rem;
   font-weight: 500;
   letter-spacing: 1.2px;
 }
 
 .placeholder {
-  color: #aaa;
+  color: #999;
   background: none;
-  border: 2px dashed #2a5be2aa;
+  border: 2px dashed #2a5be2aa !important;
   filter: none;
+  box-shadow: none !important;
 }
 
 ::-webkit-scrollbar {

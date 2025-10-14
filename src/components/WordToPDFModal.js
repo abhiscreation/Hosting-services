@@ -77,7 +77,7 @@ function WordToPDFModal({ onClose }) {
         >
           <div className="w2p-head">
             <div className="w2p-title">Word to PDF</div>
-            <button className="w2p-close" onClick={onClose}>
+            <button className="w2p-close" onClick={onClose} aria-label="Close modal">
               ×
             </button>
           </div>
