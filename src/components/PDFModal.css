@@ -1,0 +1,197 @@
+.pdf-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: radial-gradient(circle at 60% 40%, #2a5be2 0%, #101224 85%);
+  opacity: 0.86;
+  z-index: 1000;
+  backdrop-filter: blur(11px) saturate(1.17);
+  transition: opacity 0.34s;
+}
+
+.pdf-modal-wrap {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.pdf-modal {
+  pointer-events: all;
+  background: rgba(14, 28, 44, 0.96);
+  box-shadow: 0 14px 60px #2a5be2bb, 0 1px 9px #3affff13;
+  border-radius: 20px;
+  min-width: 410px;
+  padding: 2.5rem 2rem 1.8rem 2rem;
+  border: 2.5px solid #3affff99;
+  backdrop-filter: blur(17px) saturate(1.10);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  animation: pdfModalPop 0.38s cubic-bezier(0.54,.12,.38,1.46);
+  position: relative;
+}
+
+@keyframes pdfModalPop {
+  0% { opacity: 0; transform: scale(0.84) translateY(62px);}
+  100% { opacity: 1; transform: scale(1) translateY(0);}
+}
+
+.pdf-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.12rem;
+}
+.pdf-title {
+  font-size: 1.32rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 13px #2a5be2aa;
+}
+.pdf-close {
+  font-size: 1.95rem;
+  color: #3affff;
+  background: none;
+  border: none;
+  padding: 0.09rem 0.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #3affff99;
+  transition: color .2s, box-shadow .2s;
+}
+.pdf-close:hover {
+  color: #ff2a6d;
+  box-shadow: 0 0 11px #ff2a6d66;
+}
+
+.pdf-body {
+  display: flex;
+  gap: 2.1rem;
+  align-items: flex-start;
+}
+
+.pdf-zone {
+  flex: 2;
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pdf-empty {
+  background: rgba(255,255,255,0.025);
+  border: 2px dashed #2a5be2cc;
+  border-radius: 16px;
+  padding: 1.2rem 0.5rem;
+  color: #fffd;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 18px #2a5be211;
+}
+.pdf-empty p {
+  font-size: 1.14rem;
+  margin-bottom: 0.78rem;
+}
+.pdf-choose {
+  display: inline-block;
+  margin-top: 0.55rem;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(97deg, #2a5be2 60%, #3affff 120%);
+  color: #fff;
+  border-radius: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #3affff77;
+  box-shadow: 0 1px 10px #3affff33;
+  transition: background 0.17s;
+}
+.pdf-choose:hover {
+  background: linear-gradient(97deg, #3affff 15%, #2a5be2 80%);
+}
+
+#pdf-preview {
+  background: rgba(36,55,107,0.12);
+  padding: 1.1rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 29px #2a5be214;
+  color: #fff;
+  font-size: 1.05rem;
+  text-align: left;
+  margin-bottom: 0.49rem;
+}
+
+.pdf-side {
+  flex: 1.3;
+  min-width: 115px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0.18rem;
+  gap: 0.6rem;
+}
+
+.pdf-name {
+  font-size: 1.07rem;
+  font-weight: 500;
+  margin-bottom: 0.08rem;
+  color: #3affff;
+}
+.pdf-status {
+  font-size: 1.04rem;
+  font-weight: 600;
+  color: #2a5be2;
+  margin-bottom: 0.13rem;
+}
+.pdf-prog {
+  background: linear-gradient(90deg, #2a5be2 33%, #3affff 80%);
+  border-radius: 4px;
+  width: 100%;
+  height: 10px;
+  margin: 0 0 6px 0;
+  box-shadow: 0 0 8px #2a5be288;
+  position: relative;
+}
+.pdf-prog span {
+  display: block; width: 62%; height: 100%; background: #3affff; border-radius: 4px;
+  animation: pdfProgressAnim 1.2s infinite alternate;
+}
+@keyframes pdfProgressAnim {
+  0% { width: 28%; }
+  100% { width: 96%; }
+}
+
+.pdf-cta {
+  background: linear-gradient(90deg, #2a5be2 33%, #3affff 85%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7rem 1.25rem;
+  border-radius: 9px;
+  border: none;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 1px 12px #2a5be2aa;
+  cursor: pointer;
+  transition: background 0.19s, box-shadow 0.19s;
+}
+.pdf-cta:hover {
+  background: linear-gradient(90deg, #3affff 15%, #2a5be2 80%);
+  box-shadow: 0 6px 32px #2a5be2;
+}
+
+.pdf-tip {
+  color: #aaa;
+  font-size: 0.92rem;
+  margin-top: 1rem;
+  opacity: 0.79;
+}
+
+.pdf-side div[style*="color: #ff8a80"] {
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
