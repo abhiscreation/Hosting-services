@@ -1,0 +1,271 @@
+/* Ensure consistent box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Container for centering and full-screen layout */
+.grok-auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated backdrop with gradient shift */
+.grok-auth-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 30% 60%, #1a1a1a 0%, #000000 85%);
+  opacity: 0.9;
+  z-index: 1000;
+  animation: backdropGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes backdropGlow {
+  0% {
+    background: radial-gradient(circle at 30% 60%, #1a1a1a 0%, #000000 85%);
+  }
+  100% {
+    background: radial-gradient(circle at 70% 40%, #0f0f0f 0%, #000000 85%);
+  }
+}
+
+/* Form wrapper for centering */
+.grok-auth-form-wrap {
+  position: relative;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+/* Form panel with glassmorphism and slide-in animation */
+.grok-auth-form {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 52px rgba(0, 0, 0, 0.7), 0 2px 12px rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  min-width: 300px;
+  padding: 2.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px) saturate(1.2);
+  color: #fff;
+  animation: formSlideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+}
+
+@keyframes formSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Close button */
+.grok-auth-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+.grok-auth-close:hover {
+  color: #cccccc;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Form header */
+.grok-auth-head {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.grok-auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+
+.grok-auth-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+/* Form body with consistent spacing */
+.grok-auth-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Input field container */
+.grok-auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.grok-auth-field label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: left;
+}
+
+.grok-auth-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  border: 2px solid #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.grok-auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.grok-auth-input:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 0 24px rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  animation: inputGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes inputGlow {
+  0% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.grok-auth-input.is-error {
+  border-color: #ff8a80;
+  box-shadow: 0 0 8px rgba(255, 138, 128, 0.3);
+}
+
+/* Error message */
+.grok-auth-error {
+  color: #ff8a80;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Submit button with animation */
+.grok-auth-cta {
+  background: linear-gradient(90deg, #ffffff 20%, #cccccc 80%);
+  color: #000000;
+  font-weight: 600;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.grok-auth-cta:hover {
+  background: linear-gradient(90deg, #cccccc 20%, #ffffff 80%);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+.grok-auth-cta:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Switch link */
+.grok-auth-switch {
+  text-align: center;
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 1rem;
+}
+
+.grok-auth-switch a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-shadow 0.3s ease;
+}
+
+.grok-auth-switch a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .grok-auth-form {
+    padding: 1.8rem 1.2rem;
+    max-width: 360px;
+    min-width: 280px;
+  }
+  .grok-auth-title {
+    font-size: 1.6rem;
+  }
+  .grok-auth-input {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+  .grok-auth-cta {
+    padding: 0.8rem 1.3rem;
+    font-size: 1rem;
+  }
+  .grok-auth-field label {
+    font-size: 1rem;
+  }
+  .grok-auth-error {
+    font-size: 0.85rem;
+  }
+  .grok-auth-close {
+    font-size: 1.3rem;
+    padding: 0.4rem;
+  }
+}

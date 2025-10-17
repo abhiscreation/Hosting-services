@@ -1,32 +1,232 @@
-.futuristic-navbar {
-  width: 100vw;
-  padding: 1.5rem 2.6rem;
-  background: linear-gradient(90deg, #2a5be288 8%, #3affffaa 100%);
-  color: #fff;
-  font-size: 2.15rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  border-radius: 0 0 26px 26px;
-  box-shadow: 0 7px 34px #2a5be2b1, 0 2.5px 0px #3affffa2;
-  border-bottom: 2.5px solid #3affff7f;
-  text-shadow: 0 3px 17px #2a5be2dd;
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-  backdrop-filter: blur(12px) saturate(1.09);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+/* Reset box-sizing for consistency */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-logo {
-  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
-  letter-spacing: 3px;
-  font-size: 2.12rem;
-  user-select: none;
-  background: linear-gradient(94deg,#3affff 20%,#2a5be2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  text-transform: uppercase;
+/* Navbar wrapper for positioning */
+.framer-nav-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  font-family: 'Orbitron', sans-serif;
+  padding: 1rem 0;
+  background: transparent; /* Ensure wrapper doesn't block gradient */
+}
+
+/* Navbar main container with Framer style */
+.framer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Logo wrap and logo */
+.framer-logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.framer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.framer-logo span {
+  color: #3affff; /* Neon cyan for "iLove" */
+}
+
+@keyframes logoGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+
+/* Navigation links container */
+.framer-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+/* Individual nav link */
+.framer-nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.framer-nav-link:hover {
+  color: #cccccc;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.framer-nav-link-active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+/* Auth buttons container */
+.framer-auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Auth link (Login/Sign Up) */
+.framer-auth-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.framer-auth-link:hover {
+  color: #cccccc;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Logout button */
+.framer-logout-button {
+  background: linear-gradient(106deg, #ffffff 20%, #cccccc 80%);
+  color: #000000;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.framer-logout-button:hover {
+  background: linear-gradient(106deg, #cccccc 20%, #ffffff 80%);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+/* CTA button (Get Started) */
+.framer-cta-button {
+  background: linear-gradient(106deg, #ffffff 20%, #cccccc 80%);
+  color: #000000;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5), 
+              rgba(255, 255, 255, 0.05) 2px 2px 4px inset,
+              rgba(0, 0, 0, 0.15) -2px -2px 6px inset;
+  transition: all 0.3s ease;
+}
+
+.framer-cta-button:hover {
+  background: linear-gradient(106deg, #cccccc 20%, #ffffff 80%);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.7),
+              rgba(255, 255, 255, 0.1) 2px 2px 4px inset,
+              rgba(0, 0, 0, 0.2) -2px -2px 6px inset;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .framer-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .framer-nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .framer-nav-link {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .framer-auth-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .framer-auth-link {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .framer-logout-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .framer-cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .framer-logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .framer-nav {
+    padding: 0.8rem;
+  }
+
+  .framer-logo {
+    font-size: 1.3rem;
+  }
+
+  .framer-nav-link {
+    font-size: 0.95rem;
+  }
+
+  .framer-auth-link {
+    font-size: 0.95rem;
+  }
+
+  .framer-logout-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .framer-cta-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
 }
